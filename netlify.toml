@@ -14,3 +14,9 @@
 
 [context.branch-deploy]
   command = "hugo --gc --minify"
+
+[dev]
+  command = "hugo server -D"
+  targetPort = 1313
+  port = 8888
+  publish = "public"
