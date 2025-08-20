@@ -7,3 +7,16 @@ command = "hugo --gc --minify"
 [build.environment]
   GIT_SUBMODULE_STRATEGY = "recursive"
 
+[[redirects]]
+from = "/*"
+to = "https://blog.kelshd.com/:splat"
+status = 301
+force = true
+conditions = { Host = ["above-below-136d9b.netlify.app"] }
+
+[[redirects]]
+from = "/*"
+to = "https://blog.kelshd.com/:splat"
+status = 301
+force = true
+conditions = { Host = ["www.blog.kelshd.com"] }
