@@ -7,3 +7,38 @@ section = ["HTML", "RSS"]
 
 [params]
 mainSections = ["posts"]
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+title = "KelshD — Freelancer Tax Blog"
+paginate = 10
+
+[params]
+   description = "Practical, no-BS guidance on taxes for freelancers and solo creators."
+  author = "Kelsh D"
+   images = ["images/og-default.png"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Posts"
+    url  = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url  = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "RSS"
+    url  = "/index.xml"
+    weight = 4
+
+enableGitInfo = true
