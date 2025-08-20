@@ -1,2 +1,9 @@
 baseURL = "https://blog.kelshd.com/"
 theme = "ananke"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+section = ["HTML", "RSS"]
+
+[params]
+mainSections = ["posts"]
