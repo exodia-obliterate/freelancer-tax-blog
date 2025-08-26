@@ -4,3 +4,9 @@ project_10k/site/blog_backup/
 .netlify
 
 .DS_Store
+
+# ignore local files
+public/
+automation/tmp/
+automation/.env
+.DS_Store
