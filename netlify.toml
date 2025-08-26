@@ -5,18 +5,5 @@
 
 [build.environment]
   HUGO_VERSION = "0.148.2"
-
-[context.production]
-  command = "hugo --gc --minify"
-
-[context.deploy-preview]
-  command = "hugo --gc --minify"
-
-[context.branch-deploy]
-  command = "hugo --gc --minify"
-
-[dev]
-  command = "hugo server -D"
-  targetPort = 1313
-  port = 8888
-  publish = "public"
+  HUGO_ENV     = "production"
+  TZ           = "Europe/London"
