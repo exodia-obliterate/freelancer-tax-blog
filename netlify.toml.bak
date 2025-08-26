@@ -1,9 +1,9 @@
 [build]
-command = "hugo --gc --minify"
+  base    = "project_11k/site/blog"
   publish = "public"
-[context.production.environment]
-  HUGO_VERSION = "0.148.2"
-  HUGO_ENV = "production"
-[build.environment]
-  GIT_SUBMODULE_STRATEGY = "recursive"
+  command = "hugo --gc --minify"
 
+[build.environment]
+  HUGO_VERSION = "0.148.2"
+  HUGO_ENV     = "production"
+  TZ           = "Europe/London"
