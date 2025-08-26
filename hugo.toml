@@ -1,5 +1,5 @@
 baseURL = "https://blog.kelshd.com/"
-title = "KelshD — Freelancer Tax Blog"
+title = "UK Freelancer Survival Kit: Taxes Edition (2025)"
 theme = "ananke"
 canonifyURLs = true
 languageCode = "en-gb"
@@ -11,5 +11,5 @@ description = "Notes on design, code, and projects from Freelancer Tax"
 images = ["images/og-default.jpg"]
 [[menu.main]]
   name = "Store"
-  url = "https://payhip.com/kelshd"
+  url = "https://payhip.com/b/GHlS3"
   weight = 50
