@@ -1,6 +1,6 @@
 baseURL = "https://blog.kelshd.com/"
-title = "Freelancer Tax"
-languageCode = "en"
+title = "KelshD — Freelancer Tax Blog"
+languageCode = "en-gb"
 enableRobotsTXT = true
 
 [outputs]
@@ -13,3 +13,5 @@ images = ["images/og-default.jpg"]
   name = "Store"
   url = "https://payhip.com/kelshd"
   weight = 50
+theme = "ananke"
+canonifyURLs = true

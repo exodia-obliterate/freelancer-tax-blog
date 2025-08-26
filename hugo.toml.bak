@@ -1,5 +1,3 @@
 baseURL = "https://blog.kelshd.com/"
-languageCode = "en-gb"
+languageCode = 'en-us'
 title = "KelshD — Freelancer Tax Blog"
-theme = "ananke"
-canonifyURLs = true

@@ -1,5 +1,5 @@
 baseURL = "https://blog.kelshd.com/"
-title = "Freelancer Tax"
+title = "KelshD — Freelancer Tax Blog"
 languageCode = "en"
 enableRobotsTXT = true
 
@@ -9,3 +9,7 @@ home = ["HTML", "RSS", "JSON"]
 [params]
 description = "Notes on design, code, and projects from Freelancer Tax"
 images = ["images/og-default.jpg"]
+[[menu.main]]
+  name = "Store"
+  url = "https://payhip.com/kelshd"
+  weight = 50
