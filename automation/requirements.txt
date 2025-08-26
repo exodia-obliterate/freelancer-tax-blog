@@ -1,0 +1,6 @@
+pyyaml
+toml
+markdown
+requests
+python-dotenv
+beautifulsoup4

@@ -2,3 +2,5 @@ project_10k/site/blog_backup/
 
 # Local Netlify folder
 .netlify
+
+.DS_Store
