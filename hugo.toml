@@ -5,7 +5,7 @@ canonifyURLs = true
 languageCode = "en-gb"
 enableRobotsTXT = true
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS"]
 [params]
 description = "Notes on design, code, and projects from Freelancer Tax"
 images = ["images/og-default.jpg"]

@@ -1,5 +1,5 @@
 ---
-title: "UK Freelancer Tax Blog"
-description: "Tips, guides, and templates for UK freelancers."
+title: "UK Freelancer Survival Kit: Taxes Edition (2025)"
+description: "Guides, notes, and insights on UK freelancer taxes."
+draft: false
 ---
-Welcome! Start with our latest posts below.
