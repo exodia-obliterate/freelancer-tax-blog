@@ -15,3 +15,4 @@ images = ["images/og-default.jpg"]
   name = "Store"
   url = "https://payhip.com/b/GHlS3"
   weight = 50
+theme = "ananke"

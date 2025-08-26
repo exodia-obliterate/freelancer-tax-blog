@@ -16,3 +16,4 @@ images = ["images/og-default.jpg"]
 
 [[module.imports]]
   path = "github.com/theNewDynamic/gohugo-theme-ananke"
+theme = "ananke"
