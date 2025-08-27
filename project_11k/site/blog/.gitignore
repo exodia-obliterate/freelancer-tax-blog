@@ -2,7 +2,6 @@ project_10k/site/blog_backup/
 
 # Local Netlify folder
 .netlify
-<<<<<<< HEAD
 
 .DS_Store
 
@@ -24,8 +23,3 @@ nested_backup_*/
 
 # Ignore macOS system files
 .DS_Store
-=======
-project_11k/site/blog/.netlify/
-project_11k/site/blog/themes/*/netlify.toml
-project_11k/site/blog/.backup/
->>>>>>> b20e475 (Remove duplicate Netlify configs; keep root-only)

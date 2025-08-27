@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ .Title }}</title>
-  {{ if .Description }}<meta name="description" content="{{ .Description }}">{{ end }}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{- partial "head.html" . -}}
-</head>
-<body>
-  <header>
-    <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  <footer>
-    <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    {{ $isHome := .IsHome }}
+    {{ $title := cond $isHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+    {{ $desc := or .Params.description .Site.Params.description }}
+    <title>{{ $title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
+    <link rel="icon" href="/img/logo.webp" type="image/webp">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="{{ $title }}">
+    {{ if $desc }}<meta property="og:description" content="{{ $desc }}">{{ end }}
+    <meta property="og:type" content="{{ if $isHome }}website{{ else }}article{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ "/img/hero_bg.webp" | relURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    {{ if $desc }}<meta name="twitter:description" content="{{ $desc }}">{{ end }}
+    <meta name="twitter:image" content="{{ "/img/hero_bg.webp" | relURL }}">
+    {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <img src="/img/logo.webp" alt="KELSHD" class="brand-logo" onerror="this.style.display='none'">
+          <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+        </h1>
+        <nav>
+          <a href="{{ "/" | relURL }}">Home</a>
+          <a href="{{ "/posts/" | relURL }}">Posts</a>
+          {{ with .Site.Params.store_url }}<a href="{{ . }}" target="_blank" rel="noopener">Store</a>{{ end }}
+        </nav>
+      </header>
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+      <footer>
+        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v5</p>
+      </footer>
+    </div>
+  </body>
 </html>

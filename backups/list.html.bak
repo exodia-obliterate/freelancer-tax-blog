@@ -1,13 +1,25 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Title }}</h1>
-  <ul>
-    {{ range .Pages }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
-      </li>
-    {{ end }}
-  </ul>
-</section>
+  {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
+  <section>
+    <h1>{{ if .IsHome }}Latest posts{{ else }}{{ .Title }}{{ end }}</h1>
+    <ul class="postlist">
+      {{ if .IsHome }}
+        {{ range site.RegularPages }}
+          {{ if eq .Section "posts" }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">— {{ .Format "02 Jan 2006" }}</time>{{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{ range .Pages.ByDate.Reverse }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">— {{ .Format "02 Jan 2006" }}</time>{{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </section>
 {{ end }}

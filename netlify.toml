@@ -1,7 +1,15 @@
 [build]
+<<<<<<< HEAD
 base = "."
+=======
+base = "project_11k/site/blog"
+>>>>>>> b20e475 (Remove duplicate Netlify configs; keep root-only)
 publish = "public"
 command = "hugo --gc --minify"
 
 [build.environment]
 HUGO_VERSION = "0.148.2"
+<<<<<<< HEAD
+=======
+HUGO_ENV = "production"
+>>>>>>> b20e475 (Remove duplicate Netlify configs; keep root-only)
