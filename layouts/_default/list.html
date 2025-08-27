@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
   <section>
     <h1>{{ if .IsHome }}Latest posts{{ else }}{{ .Title }}{{ end }}</h1>
     <ul class="postlist">
