@@ -2,8 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+    {{ $isHome := .IsHome }}
+    {{ $title := cond $isHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+    <title>{{ $title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ $desc := or .Params.description .Site.Params.description }}
+    {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
+    <meta property="og:title" content="{{ $title }}">
+    {{ if $desc }}<meta property="og:description" content="{{ $desc }}">{{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="{{ if $isHome }}website{{ else }}article{{ end }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/index.xml" | relURL }}">
     {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   </head>
@@ -14,13 +23,14 @@
         <nav>
           <a href="{{ "/" | relURL }}">Home</a>
           <a href="{{ "/posts/" | relURL }}">Posts</a>
+          {{ with .Site.Params.store_url }}<a href="{{ . }}" target="_blank" rel="noopener">Store</a>{{ end }}
         </nav>
       </header>
       <main>
         {{ block "main" . }}{{ end }}
       </main>
       <footer>
-        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v2</p>
+        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v3</p>
       </footer>
     </div>
   </body>
