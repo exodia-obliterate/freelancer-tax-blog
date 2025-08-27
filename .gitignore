@@ -70,3 +70,8 @@ project_11k/site/blog/.gitmodules
 *.xlsx
 *.pdf
 *.docx
+# Ignore all backup files
+*.bak
+*.bak.*
+.backup/
+backups/
