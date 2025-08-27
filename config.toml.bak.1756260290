@@ -1,12 +1,10 @@
 baseURL = "https://blog.kelshd.com/"
 title = "UK Freelancer Survival Kit: Taxes Edition (2025)"
+theme = "ananke"
+themesDir = "themes"
+canonifyURLs = true
 languageCode = "en-gb"
 enableRobotsTXT = true
-canonifyURLs = true
-
-theme = "ananke"
-
-
 
 [outputs]
 home = ["HTML", "RSS"]
@@ -15,4 +13,7 @@ home = ["HTML", "RSS"]
 description = "Guides, notes, and insights on UK freelancer taxes"
 images = ["images/og-default.jpg"]
 
-
+[[menu.main]]
+  name = "Store"
+  url = "https://payhip.com/b/GHlS3"
+  weight = 50
