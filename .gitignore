@@ -29,3 +29,21 @@ project_11k/site/blog/.netlify/
 project_11k/site/blog/themes/*/netlify.toml
 project_11k/site/blog/.backup/
 >>>>>>> b20e475 (Remove duplicate Netlify configs; keep root-only)
+# macOS junk
+.DS_Store
+
+public/
+public_test/
+resources/_gen/
+.hugo_build.lock
+
+project_11k/site/blog/backups/
+project_11k/site/blog/config*.bak
+project_11k/site/blog/hugo*.bak
+_backup/
+
+project_11k/site/blog/.netlify/
+
+*.xlsx
+*.pdf
+*.docx
