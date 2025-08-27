@@ -15,3 +15,11 @@ public/
 automation/tmp/
 automation/.env
 .DS_Store
+
+# Ignore local backup folders
+backup_*/
+.backup/
+nested_backup_*/
+
+# Ignore macOS system files
+.DS_Store
