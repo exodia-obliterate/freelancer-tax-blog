@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     {{ $isHome := .IsHome }}
     {{ $title := cond $isHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+    {{ $desc := or .Params.description .Site.Params.description }}
     <title>{{ $title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
     <link rel="icon" href="/img/logo.webp" type="image/webp">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="{{ $title }}">
+    {{ if $desc }}<meta property="og:description" content="{{ $desc }}">{{ end }}
+    <meta property="og:type" content="{{ if $isHome }}website{{ else }}article{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ "/img/hero_bg.webp" | relURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    {{ if $desc }}<meta name="twitter:description" content="{{ $desc }}">{{ end }}
+    <meta name="twitter:image" content="{{ "/img/hero_bg.webp" | relURL }}">
     {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   </head>
@@ -27,7 +39,7 @@
         {{ block "main" . }}{{ end }}
       </main>
       <footer>
-        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v6 • sha:{{ with .Site.Params.build_sha }}{{ . }}{{ else }}n/a{{ end }}</p>
+        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v5</p>
       </footer>
     </div>
   </body>
