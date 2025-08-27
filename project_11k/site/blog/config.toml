@@ -1,11 +1,12 @@
 baseURL = "https://blog.kelshd.com/"
 title = "UK Freelancer Survival Kit: Taxes Edition (2025)"
-theme = "ananke"
-themesDir = "themes"
+languageCode = "en-gb"
 canonifyURLs = true
 enableRobotsTXT = true
-languageCode = "en-gb"
+
+[outputs]
+home = ["HTML", "RSS"]
 
 [params]
-  description = "Guides, notes, and insights on UK freelancer taxes"
-  images = ["images/og-default.jpg"]
+description = "Guides, notes, and insights on UK freelancer taxes"
+images = ["images/og-default.jpg"]
