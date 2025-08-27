@@ -3,17 +3,9 @@ title = "UK Freelancer Survival Kit: Taxes Edition (2025)"
 theme = "ananke"
 themesDir = "themes"
 canonifyURLs = true
-languageCode = "en-gb"
 enableRobotsTXT = true
-
-[outputs]
-home = ["HTML", "RSS"]
+languageCode = "en-gb"
 
 [params]
-description = "Guides, notes, and insights on UK freelancer taxes"
-images = ["images/og-default.jpg"]
-
-[[menu.main]]
-  name = "Store"
-  url = "https://payhip.com/b/GHlS3"
-  weight = 50
+  description = "Guides, notes, and insights on UK freelancer taxes"
+  images = ["images/og-default.jpg"]
