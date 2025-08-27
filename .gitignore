@@ -47,3 +47,26 @@ project_11k/site/blog/.netlify/
 *.xlsx
 *.pdf
 *.docx
+# Ignore Hugo scratch/build/test
+public_test/
+resources/_gen/
+.hugo_build.lock
+
+# Ignore local backups and scripts
+project_11k/site/blog/backups/
+project_11k/site/blog/config*.bak
+project_11k/site/blog/hugo*.bak
+project_11k/site/blog/automation/
+project_11k/site/blog/fix*.sh
+project_11k/site/blog/check_*.sh
+
+# Ignore Netlify CLI state
+project_11k/site/blog/.netlify/
+
+# Ignore submodule metadata
+project_11k/site/blog/.gitmodules
+
+# Office/PDF files
+*.xlsx
+*.pdf
+*.docx
