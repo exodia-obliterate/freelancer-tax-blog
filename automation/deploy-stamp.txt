@@ -1,3 +1,3 @@
-deploy-stamp: 2025-08-31T19:59:18Z
-perf_scss_img_minify: applied
+deploy-stamp: 2025-08-31T20:00:27Z
+cfg_permalinks_taxonomies_robots_breadcrumbs_archetypes: applied
 site-root: /Users/carlel/freelancer-tax-blog/project_11k/site/blog
