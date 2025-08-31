@@ -1,3 +1,3 @@
-deploy-stamp: 2025-08-31T20:06:32Z
-cta_and_search: applied
+deploy-stamp: 2025-08-31T20:15:37Z
+hero_tokens_asserted: applied
 site-root: /Users/carlel/freelancer-tax-blog/project_11k/site/blog
