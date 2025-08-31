@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/css/main.css">
   {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
   {{ partial "analytics.html" . }}
+  {{ partial "jsonld-org.html" . }}
 </head>
 <body>
   <div class="container">
