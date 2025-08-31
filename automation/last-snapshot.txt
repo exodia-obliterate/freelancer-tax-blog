@@ -1,0 +1,16 @@
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 37 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 14 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 24 ms
+/Users/carlel/freelancer-tax-blog/automation/site-snapshot-20250831T214830Z.tar.gz
