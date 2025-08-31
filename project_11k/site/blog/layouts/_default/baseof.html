@@ -28,6 +28,7 @@
   {{ partial "analytics.html" . }}
   {{ if templates.Exists "partials/jsonld-org.html" }}{{ partial "jsonld-org.html" . }}{{ end }}
   {{ if templates.Exists "partials/jsonld-breadcrumbs.html" }}{{ partial "jsonld-breadcrumbs.html" . }}{{ end }}
+  {{ if .Params.faq }}{{ partial "jsonld-faq.html" . }}{{ end }}
 </head>
 <body>
   <div class="container">

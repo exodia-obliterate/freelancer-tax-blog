@@ -1,0 +1,13 @@
+{{ $faqs := .Params.faq }}
+{{ if $faqs }}
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+  {{- $last := sub (len $faqs) 1 -}}
+  {{- range $i, $f := $faqs -}}
+    {"@type":"Question","name":{{ jsonify $f.q }},"acceptedAnswer":{"@type":"Answer","text":{{ jsonify $f.a }}}}{{ if lt $i $last }},{{ end }}
+  {{- end -}}
+  ]
+}</script>
+{{ end }}
