@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="{{ $sass.RelPermalink }}" integrity="{{ $sass.Data.Integrity }}">
   <link rel="stylesheet" href="/css/main.css">
   {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
+  {{ partial "analytics.html" . }}
 </head>
 <body>
   <div class="container">
