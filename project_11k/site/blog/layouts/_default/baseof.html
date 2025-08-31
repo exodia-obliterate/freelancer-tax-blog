@@ -16,10 +16,30 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <header><h1>{{ .Site.Title }}</h1></header>
-  <main>{{ block "main" . }}{{ end }}</main>
-  <footer>
-    <p>© {{ now.Year }} {{ .Site.Title }} • layout:vFINAL • build:{{ now.Format "2006-01-02T15:04:05Z07:00" }}</p>
-  </footer>
+  <div class="container">
+    <header>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;">
+        <div class="brand">{{ .Site.Title }}</div>
+        <nav>
+          <ul>
+            {{ $m := .Site.Menus.main }}
+            {{ if $m }}
+              {{ range $m }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+      <div class="container">
+        <p>© {{ now.Year }} {{ .Site.Title }} • layout:vFINAL • build:{{ now.Format "2006-01-02T15:04:05Z07:00" }}</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
