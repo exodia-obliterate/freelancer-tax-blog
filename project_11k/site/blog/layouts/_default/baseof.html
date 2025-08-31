@@ -9,6 +9,7 @@
   <meta name="build" content="{{ now.Format "2006-01-02T15:04:05Z07:00" }}">
   <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
   <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ partial "social-meta.html" . }}
   {{ partial "social-meta.html" . }}
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
