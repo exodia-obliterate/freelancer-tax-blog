@@ -1,3 +1,3 @@
-deploy-stamp: 2025-08-31T20:17:43Z
-content_taxonomies: applied
+deploy-stamp: 2025-08-31T20:29:38Z
+contact_form_verified_regex: applied
 site-root: /Users/carlel/freelancer-tax-blog/project_11k/site/blog
