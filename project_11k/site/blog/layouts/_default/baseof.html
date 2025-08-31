@@ -43,6 +43,7 @@
     {{ partial "breadcrumbs.html" . }}
     <main>
       {{ partial "hero.html" . }}
+  {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
       {{ block "main" . }}{{ end }}
       {{ partial "cta.html" . }}
     </main>
