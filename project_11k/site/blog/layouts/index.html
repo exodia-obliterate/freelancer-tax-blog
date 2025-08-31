@@ -1,15 +1,12 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Site.Title }}</h1>
-  {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
-  {{ $pages := where .Site.RegularPages "Type" "ne" "page" }}
-  {{ if gt (len $pages) 0 }}
+  {{ partial "hero.html" . }}
+  <section>
     <h2>Latest</h2>
+    {{ $pages := where .Site.RegularPages "Type" "ne" "page" }}
     <ul>
       {{ range first 10 ($pages.ByDate.Reverse) }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
-  {{ end }}
-</section>
+  </section>
 {{ end }}
