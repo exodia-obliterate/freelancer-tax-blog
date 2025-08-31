@@ -1,0 +1,3 @@
+release-stamp: 2025-08-31T21:48:31Z
+version: v1.0.0
+snapshot: /Users/carlel/freelancer-tax-blog/automation/site-snapshot-20250831T214830Z.tar.gz
