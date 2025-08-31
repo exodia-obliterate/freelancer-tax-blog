@@ -18,3 +18,9 @@ main article,main section{margin-top:24px}
 .hero h1{font-size:2rem;margin:0 0 .5rem}
 @media(min-width:768px){.hero h1{font-size:2.5rem}}
 .hero .lead{font-size:1.05rem}
+.featured{margin:48px 0}
+.featured h2{margin-bottom:12px}
+.featured ul{list-style:none;padding:0}
+.featured li{margin:0 0 16px}
+.featured a{color:var(--link);font-weight:600}
+.featured p{margin:.2rem 0 0;color:var(--muted);font-size:.95rem}
