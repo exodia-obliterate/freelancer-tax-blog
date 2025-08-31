@@ -1,0 +1,11 @@
+{{ $name := .Site.Title }}
+{{ $url := .Site.BaseURL }}
+{{ $img := "/images/og-default.png" }}
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":{{ jsonify $name }},
+  "url":{{ jsonify $url }},
+  "publisher":{"@type":"Organization","name":{{ jsonify $name }},"url":{{ jsonify $url }},"logo":{{ jsonify $img }}},
+  "potentialAction":{"@type":"SearchAction","target":{{ printf "%ssearch/?q={search_term_string}" $url | jsonify }},"query-input":"required name=search_term_string"}
+}</script>

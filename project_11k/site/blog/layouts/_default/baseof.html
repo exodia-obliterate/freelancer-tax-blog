@@ -13,7 +13,7 @@
   {{ partial "social-meta.html" . }}
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  {{ partial "jsonld-site.html" . }}
+  {{ if templates.Exists "partials/jsonld-site.html" }}{{ partial "jsonld-site.html" . }}{{ end }}
   {{ partial "social-meta.html" . }}
   {{ with .Params.images }}{{ $img := index . 0 }}<meta property="og:image" content="{{ $img }}">{{ else }}{{ with .Site.Params.og_image }}<meta property="og:image" content="{{ . }}">{{ end }}{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="/css/main.css">
   {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
   {{ partial "analytics.html" . }}
-  {{ partial "jsonld-org.html" . }}
-  {{ partial "jsonld-breadcrumbs.html" . }}
+  {{ if templates.Exists "partials/jsonld-org.html" }}{{ partial "jsonld-org.html" . }}{{ end }}
+  {{ if templates.Exists "partials/jsonld-breadcrumbs.html" }}{{ partial "jsonld-breadcrumbs.html" . }}{{ end }}
 </head>
 <body>
   <div class="container">
