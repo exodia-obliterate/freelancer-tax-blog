@@ -47,6 +47,7 @@
       {{ partial "hero.html" . }}
   {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
       {{ block "main" . }}{{ end }}
+      {{ if .IsHome }}{{ partial "featured.html" . }}{{ end }}
       {{ partial "cta.html" . }}
     </main>
     <footer>
