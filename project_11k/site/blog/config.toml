@@ -8,6 +8,6 @@ enableRobotsTXT = true
 home = ["HTML", "RSS"]
 
 [params]
-description = "Guides, notes, and insights on UK freelancer taxes"
+description = "UK Freelancer Survival Kit: Taxes Edition (2025) — practical guides, checklists, and resources."
 images = ["images/og-default.jpg"]
 theme = "ananke"
