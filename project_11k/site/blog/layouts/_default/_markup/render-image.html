@@ -1,0 +1,22 @@
+{{ $alt := .Text }}
+{{ $title := .Title }}
+{{ $res := .Page.Resources.GetMatch .Destination }}
+{{ if not $res }}
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+{{ else }}
+  {{ $w := slice 400 800 1200 }}
+  {{ $jpg := slice }}
+  {{ $webp := slice }}
+  {{ range $w }}
+    {{ $r := $res.Fit (printf "%dx q75" .) }}
+    {{ $jpg = $jpg | append (printf "%s %dw" $r.RelPermalink .) }}
+    {{ $rw := $r | resources.Convert "image/webp" }}
+    {{ $webp = $webp | append (printf "%s %dw" $rw.RelPermalink .) }}
+  {{ end }}
+  {{ $largest := $res.Fit "1200x q75" }}
+  <picture>
+    <source type="image/webp" srcset="{{ delimit $webp ", " }}">
+    <source type="{{ $largest.MediaType.Type }}/{{ $largest.MediaType.SubType }}" srcset="{{ delimit $jpg ", " }}">
+    <img src="{{ $largest.RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async" width="{{ $largest.Width }}" height="{{ $largest.Height }}">
+  </picture>
+{{ end }}
