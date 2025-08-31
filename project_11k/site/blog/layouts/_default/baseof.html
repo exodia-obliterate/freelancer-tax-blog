@@ -35,7 +35,9 @@
               {{ end }}
             {{ end }}
           </ul>
-        </nav>
+        <form method="get" action="/search/" style="margin:0 0 0 12px">
+          <input type="search" name="q" placeholder="Search..." style="padding:.35rem .6rem;border-radius:6px;border:1px solid #333">
+        </form>
       </div>
     </header>
     {{ partial "breadcrumbs.html" . }}
