@@ -5,7 +5,7 @@ SITE="$HOME/freelancer-tax-blog/project_11k/site/blog"
 TARGET="https://blog.kelshd.com"
 cd "$SITE"
 hugo --gc --minify
-urls=$(xmllint --xpath '//*[local-name()="loc"]/text()' public/sitemap.xml | tr ' ' '\n' | sed '/^$/d')
+urls=$(curl -sL "$TARGET/sitemap.xml" | xmllint --xpath '//*[local-name()="loc"]/text()' - | tr ' ' '\n' | sed '/^$/d')
 fail=0
 for u in $urls; do
   code=$(curl -sIL -o /dev/null -w '%{http_code}' "$u" || echo 000)
