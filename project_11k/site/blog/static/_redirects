@@ -5,3 +5,7 @@ www.blog.kelshd.com/* https://blog.kelshd.com/:splat 301!
 /feed     /index.xml    301!
 /rss      /index.xml    301!
 /contact-us  /contact/  301!
+/blog/*    /:splat   301!
+/blog      /         301!
+/posts/*   /:splat   301!
+/posts     /         301!
