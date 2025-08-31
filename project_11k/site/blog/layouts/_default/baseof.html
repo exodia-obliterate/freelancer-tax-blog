@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Site.Title }}</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header><h1>{{ .Site.Title }}</h1></header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer>
+    <p>© {{ now.Year }} {{ .Site.Title }} • layout:vFINAL</p>
+    <!-- build:{{ now.Format "2006-01-02T15:04:05Z07:00" }} -->
+  </footer>
+</body>
+</html>

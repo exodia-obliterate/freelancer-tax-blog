@@ -4,7 +4,6 @@ languageCode = "en-gb"
 enableRobotsTXT = true
 canonifyURLs = true
 
-theme = "ananke"
 
 
 

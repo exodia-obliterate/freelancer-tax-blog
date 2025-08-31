@@ -10,3 +10,4 @@ home = ["HTML", "RSS"]
 [params]
 description = "Guides, notes, and insights on UK freelancer taxes"
 images = ["images/og-default.jpg"]
+theme = "ananke"

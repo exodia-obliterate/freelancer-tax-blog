@@ -1,0 +1,51 @@
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+
+Template Metrics:
+
+       cumulative       average       maximum      cache  percent  cached  total  
+         duration      duration      duration  potential   cached   count  count  template
+       ----------      --------      --------  ---------  -------  ------  -----  --------
+      198.48704ms   14.177645ms   25.350208ms        100        0       0     14  _partials/site-style.html
+      80.734833ms   20.183708ms   28.187125ms          0        0       0      4  single.html
+      30.225915ms    6.045183ms   27.903583ms          0        0       0      5  _default/taxonomy.html
+      28.445458ms   14.222729ms       28.02ms          0        0       0      2  _default/terms.html
+      28.076416ms   28.076416ms   28.076416ms          0        0       0      1  404.html
+      27.957333ms   27.957333ms   27.957333ms          0        0       0      1  index.html
+      27.890584ms   27.890584ms   27.890584ms          0        0       0      1  list.html
+       7.582541ms     180.536µs    1.061833ms        100        0       0     42  _partials/_funcs/get-page-images.html
+       2.449956ms     174.996µs     507.166µs        100       93      13     14  _partials/func/style/getmaincss.html
+       1.573625ms    1.573625ms    1.573625ms          0        0       0      1  sitemap.xml
+       1.050291ms    1.050291ms    1.050291ms          0        0       0      1  robots.txt
+       1.019543ms     113.282µs     411.875µs          0        0       0      9  rss.xml
+        977.874µs     195.574µs     343.042µs        100        0       0      5  _partials/page-header.html
+        904.501µs      64.607µs     264.875µs        100        0       0     14  _partials/site-navigation.html
+        606.332µs       67.37µs     138.208µs         66        0       0      9  _partials/site-header.html
+        357.876µs      25.562µs     151.125µs          0        0       0     14  summary.html
+        235.168µs      47.033µs      111.75µs         20        0       0      5  _partials/func/style/getresource.html
+        210.332µs      15.023µs     123.583µs        100       93      13     14  _partials/site-footer.html
+        195.127µs      11.478µs      31.417µs        100        0       0     17  _partials/func/getfeaturedimage.html
+        141.585µs      35.396µs      55.542µs        100        0       0      4  _partials/social/share.html
+        100.001µs          25µs      54.917µs        100        0       0      4  _partials/menu-contextual.html
+         90.959µs      30.319µs      38.417µs          0        0       0      3  summary-with-image.html
+         79.002µs       5.643µs      30.083µs        100       93      13     14  _partials/site-favicon.html
+             76µs       5.066µs      57.709µs        100       93      14     15  _partials/social/follow.html
+          29.75µs       7.437µs      15.584µs         37        0       0      4  _partials/tags.html
+         25.374µs       1.812µs       3.208µs        100        0       0     14  _partials/i18nlist.html
+         10.041µs      10.041µs      10.041µs          0        0       0      1  alias.html
+          6.669µs         476ns       1.792µs        100        0       0     14  _partials/site-scripts.html
+          6.083µs         434ns         959ns        100        0       0     14  _partials/head-additions.html
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 25 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │  5 
+ Processed images │  0 
+ Aliases          │  1 
+ Cleaned          │  0 
+
+Total in 173 ms
