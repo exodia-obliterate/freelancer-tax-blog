@@ -1,0 +1,11 @@
+{{ if .IsHome }}
+<section class="hero">
+  <div class="hero-inner">
+    <h1>{{ or .Site.Params.hero_title .Site.Title }}</h1>
+    <p class="lead">{{ or .Site.Params.hero_subtitle "" }}</p>
+    {{ $url := or .Site.Params.payhip_url "#" }}
+    {{ $txt := or .Site.Params.cta_text "Get Started" }}
+    <p><a class="button" href="{{ $url }}">{{ $txt }}</a></p>
+  </div>
+</section>
+{{ end }}
