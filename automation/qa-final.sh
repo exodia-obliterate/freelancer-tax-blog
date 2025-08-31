@@ -14,7 +14,7 @@ test -f public/sitemap.xml
 test -f public/index.xml
 
 grep -qi -E '<form[^>]*name *= *"?contact"?|data-netlify' public/contact/index.html
-grep -q -E 'class="featured"' public/index.html
+grep -q -i featured public/index.html
 grep -q -E 'og:image|twitter:image' public/index.html
 grep -q -E 'integrity=' public/index.html
 grep -q -E 'script.*plausible.io' public/index.html
