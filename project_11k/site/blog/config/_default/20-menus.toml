@@ -1,0 +1,25 @@
+[menu]
+
+  [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  identifier = "guides"
+  name = "Guides"
+  url = "/guides/"
+  weight = 2
+
+  [[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 3
+
+  [[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 4
