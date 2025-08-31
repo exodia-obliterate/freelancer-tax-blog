@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="lead">{{ . }}</div>{{ end }}
+  <ul>
+    {{ range .Pages.ByDate.Reverse }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .Params.description }}<br><small>{{ . }}</small>{{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
