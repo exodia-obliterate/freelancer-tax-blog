@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ if ne (getenv "CONTEXT") "production" }}<meta name="robots" content="noindex,nofollow">{{ end }}
+  {{ if ne (hugo.Environment) "production" }}<meta name="robots" content="noindex,nofollow">{{ end }}
   <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="build" content="{{ now.Format "2006-01-02T15:04:05Z07:00" }}">
   <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
