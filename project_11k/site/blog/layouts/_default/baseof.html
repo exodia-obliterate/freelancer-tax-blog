@@ -14,6 +14,7 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml">
   <link rel="stylesheet" href="/css/main.css">
+  {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
 </head>
 <body>
   <div class="container">

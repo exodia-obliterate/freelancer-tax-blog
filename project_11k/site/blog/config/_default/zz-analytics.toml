@@ -1,0 +1,10 @@
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+plausible_domain = "blog.kelshd.com"
+og_image = "/images/og-default.jpg"
