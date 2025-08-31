@@ -15,6 +15,9 @@
   <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml">
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
+{{ $opts := dict "targetPath" "/css/app.css" }}
+{{ $sass := resources.Get "scss/app.scss" | toCSS $opts | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $sass.RelPermalink }}" integrity="{{ $sass.Data.Integrity }}">
   <link rel="stylesheet" href="/css/main.css">
   {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
 </head>
