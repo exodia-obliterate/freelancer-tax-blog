@@ -5,3 +5,15 @@
 
 [build.environment]
   HUGO_VERSION = "0.148.2"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  CONTEXT = "production"
+
+[context.deploy-preview.environment]
+  HUGO_ENV = "preview"
+  CONTEXT = "deploy-preview"
+
+[context.branch-deploy.environment]
+  HUGO_ENV = "staging"
+  CONTEXT = "branch-deploy"
