@@ -1,3 +1,3 @@
-deploy-stamp: 2025-08-31T19:23:59Z
+deploy-stamp: 2025-08-31T19:28:38Z
 layout: vFINAL
 site-root: /Users/carlel/freelancer-tax-blog/project_11k/site/blog
