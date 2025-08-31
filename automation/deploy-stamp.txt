@@ -1,3 +1,3 @@
-deploy-stamp: 2025-08-31T21:17:32Z
-no-getenv: applied
+deploy-stamp: 2025-08-31T21:19:04Z
+social_meta_js: applied
 site-root: /Users/carlel/freelancer-tax-blog/project_11k/site/blog
