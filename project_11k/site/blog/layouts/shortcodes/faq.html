@@ -1,0 +1,22 @@
+{{- $faqs := .Page.Params.faq -}}
+{{- if $faqs -}}
+<section class="faq">
+  <h2>FAQ</h2>
+  <dl>
+    {{- range $faqs -}}
+    <dt>{{ .q }}</dt>
+    <dd>{{ .a | safeHTML }}</dd>
+    {{- end -}}
+  </dl>
+</section>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+  {{- $last := sub (len $faqs) 1 -}}
+  {{- range $i, $f := $faqs -}}
+    {"@type":"Question","name":{{ jsonify $f.q }},"acceptedAnswer":{"@type":"Answer","text":{{ jsonify $f.a }}}}{{ if lt $i $last }},{{ end }}
+  {{- end -}}
+  ]
+}</script>
+{{- end -}}
