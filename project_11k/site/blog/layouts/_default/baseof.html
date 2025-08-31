@@ -13,6 +13,7 @@
   {{ partial "social-meta.html" . }}
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
+  {{ partial "jsonld-site.html" . }}
   {{ partial "social-meta.html" . }}
   {{ with .Params.images }}{{ $img := index . 0 }}<meta property="og:image" content="{{ $img }}">{{ else }}{{ with .Site.Params.og_image }}<meta property="og:image" content="{{ . }}">{{ end }}{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
