@@ -1,1 +1,2 @@
-https://www.blog.kelshd.com/* https://blog.kelshd.com/:splat 301!
+http://blog.kelshd.com/* https://blog.kelshd.com/:splat 301!
+www.blog.kelshd.com/* https://blog.kelshd.com/:splat 301!
