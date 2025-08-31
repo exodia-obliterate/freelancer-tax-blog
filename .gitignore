@@ -75,3 +75,4 @@ project_11k/site/blog/.gitmodules
 *.bak.*
 .backup/
 backups/
+/project_11k/site/blog/resources/_gen/
