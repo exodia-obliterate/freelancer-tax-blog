@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
   <h1>{{ .Title }}</h1>
-  {{ with .Date }}<p><small>{{ . }}</small></p>{{ end }}
+  {{ if in .RelPermalink "/guides/getting-started/" }}{{ partial "coverpicture.html" . }}{{ end }}
   {{ .Content }}
 </article>
 {{ end }}
