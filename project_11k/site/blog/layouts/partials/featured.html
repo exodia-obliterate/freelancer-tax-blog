@@ -1,0 +1,17 @@
+{{ $section := .Site.Params.featured.section | default "guides" }}
+{{ $count := .Site.Params.featured.count | default 3 }}
+{{ $title := .Site.Params.featured.title | default "Featured" }}
+{{ $pages := first $count (where .Site.RegularPages "Section" $section).ByDate.Reverse }}
+{{ if gt (len $pages) 0 }}
+<section class="featured">
+  <h2>{{ $title }}</h2>
+  <ul>
+  {{ range $pages }}
+    <li>
+      <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a>
+      <p>{{ with .Params.description }}{{ . }}{{ else }}&nbsp;{{ end }}</p>
+    </li>
+  {{ end }}
+  </ul>
+</section>
+{{ end }}
