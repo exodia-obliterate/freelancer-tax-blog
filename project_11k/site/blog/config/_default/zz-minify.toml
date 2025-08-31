@@ -1,0 +1,12 @@
+[minify]
+  minifyOutput = true
+
+[minify.tdewolff.html]
+  keepWhitespace = false
+  keepComments = false
+
+[minify.tdewolff.css]
+  keepWhitespace = false
+
+[minify.tdewolff.js]
+  keepVarNames = false
