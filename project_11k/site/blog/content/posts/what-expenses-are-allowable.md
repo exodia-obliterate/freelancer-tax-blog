@@ -6,20 +6,35 @@ categories: ["Taxes"]
 tags: ["expenses","allowable"]
 url: /what-expenses-are-allowable/
 ---
-A practical list to decide what you can deduct.
 
-## Generally allowable
-- Costs wholly and exclusively for the business.
-- Software, subscriptions, and tools for work.
-- Professional fees and insurance.
-- Travel for client work.
+Knowing what’s deductible is the heart of freelancer tax. HMRC’s test: expenses must be “wholly and exclusively” for business.
 
-## Watchouts
-- Mixed-use items need apportionment.
-- Capital vs expense treatment.
-- Entertainment is often disallowed.
+## Commonly allowable
+- Software, subscriptions, hosting.
+- Office supplies, stationery.
+- Professional fees (accountant, solicitor).
+- Insurance premiums.
+- Marketing, ads, website costs.
+- Travel to client sites.
 
-## Process
-- Write a short note with each receipt explaining purpose.
-- File immediately; don’t wait.
-- Revisit borderline items quarterly with your accountant.
+## Mixed-use
+- Phone bills: claim business proportion.
+- Home internet: claim % used for work.
+- Vehicle: claim mileage or apportion costs.
+
+## Not allowable
+- Personal clothing (unless protective).
+- Client entertainment.
+- Fines and penalties.
+
+## Example
+You pay £600 for a laptop used 80% for work. Claim £480 as an expense.
+
+## Checklist
+- [ ] Keep receipts.
+- [ ] Add notes for mixed-use.
+- [ ] Review categories quarterly.
+- [ ] Keep digital backups.
+
+## Useful Links
+- https://www.gov.uk/expenses-if-youre-self-employed
