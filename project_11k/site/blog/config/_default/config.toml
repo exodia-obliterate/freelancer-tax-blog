@@ -37,3 +37,13 @@ posts = "/:slug/"
 
 [outputs]
 home = ["HTML","RSS","JSON"]
+
+  [[menu.main]]
+  name = "Resources"
+  url = "/resources/"
+  weight = 7
+
+  [[menu.main]]
+  name = "FAQ"
+  url = "/faq/"
+  weight = 8
