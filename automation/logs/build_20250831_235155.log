@@ -1,0 +1,21 @@
+===== BUILD 20250831_235155 =====
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  found no layout file for "html" for kind "page": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 17 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 17 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 31 ms
+===== BUILD DONE 20250831_235155 =====

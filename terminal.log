@@ -1,0 +1,8 @@
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+Total in 45 ms
+Error: error building site: render: failed to render pages: render of "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/guides/getting-started.md" failed: "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/layouts/_default/baseof.html:55:57": execute of template failed: template: guides/single.html:55:57: executing "guides/single.html" at <partial "coverpicture.html" .>: error calling partial: partial "coverpicture.html" not found

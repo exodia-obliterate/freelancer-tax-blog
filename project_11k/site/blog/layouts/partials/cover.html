@@ -1,10 +1,5 @@
-{{ $alt := .Text }}
-{{ $title := .Title }}
-{{ $name := path.Base .Destination }}
-{{ $res := .Page.Resources.GetMatch (printf "**%s" $name) }}
-{{ if not $res }}
-  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
-{{ else }}
+{{ $res := or (.Resources.GetMatch "cover.*") (.Resources.GetMatch "**/cover.*") }}
+{{ if $res }}
   {{ $widths := slice 400 800 1200 }}
   {{ $jpg := slice }}
   {{ $webp := slice }}
@@ -18,6 +13,9 @@
   <picture>
     <source type="image/webp" srcset="{{ delimit $webp ", " }}">
     <source type="{{ $largest.MediaType.Type }}/{{ $largest.MediaType.SubType }}" srcset="{{ delimit $jpg ", " }}">
-    <img src="{{ $largest.RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async" width="{{ $largest.Width }}" height="{{ $largest.Height }}">
+    <img src="{{ $largest.RelPermalink }}" alt="{{ .Title }}" loading="lazy" decoding="async" width="{{ $largest.Width }}" height="{{ $largest.Height }}">
   </picture>
+  <span data-cover="HIT"></span>
+{{ else }}
+  <span data-cover="MISS"></span>
 {{ end }}

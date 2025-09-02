@@ -1,0 +1,35 @@
++ set -e
++ set -u
++ set -o pipefail
++ SITE_ROOT=/Users/carlel/freelancer-tax-blog/project_11k/site/blog
++ TARGET=https://blog.kelshd.com
++ cd /Users/carlel/freelancer-tax-blog/project_11k/site/blog
++ hugo --gc --minify
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 37 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 14 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 41 ms
++ test -f public/index.html
++ test -f public/sitemap.xml
++ test -f public/index.xml
++ grep -qi -E '<form[^>]*name *= *"?contact"?|data-netlify' public/contact/index.html
++ grep -q -i featured public/index.html
++ grep -q -E 'og:image|twitter:image' public/index.html
++ grep -q -E integrity= public/index.html
++ grep -q -E 'script.*plausible.io' public/index.html
++ curl -sIL https://blog.kelshd.com
++ grep -E Strict-Transport-Security

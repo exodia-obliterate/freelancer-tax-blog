@@ -1,10 +1,8 @@
-{{ $alt := .Text }}
-{{ $title := .Title }}
-{{ $name := path.Base .Destination }}
+{{ $src := .Get "src" }}
+{{ $alt := (.Get "alt") | default "" }}
+{{ $name := path.Base $src }}
 {{ $res := .Page.Resources.GetMatch (printf "**%s" $name) }}
-{{ if not $res }}
-  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
-{{ else }}
+{{ if $res }}
   {{ $widths := slice 400 800 1200 }}
   {{ $jpg := slice }}
   {{ $webp := slice }}
@@ -20,4 +18,6 @@
     <source type="{{ $largest.MediaType.Type }}/{{ $largest.MediaType.SubType }}" srcset="{{ delimit $jpg ", " }}">
     <img src="{{ $largest.RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async" width="{{ $largest.Width }}" height="{{ $largest.Height }}">
   </picture>
+{{ else }}
+  <img src="{{ $src | safeURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
 {{ end }}

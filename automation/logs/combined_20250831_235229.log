@@ -1,0 +1,65 @@
+===== BUILD 20250831_235229 =====
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  found no layout file for "html" for kind "page": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 17 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 17 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 54 ms
+===== BUILD DONE 20250831_235229 =====
+===== QA 20250831_235229 =====
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  found no layout file for "html" for kind "page": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 17 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 17 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 20 ms
+=== QA FINAL OK ===
+200 https://blog.kelshd.com/tags/
+OK: linkcheck passed
+Start building sites … 
+hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
+
+WARN  found no layout file for "html" for kind "page": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN  Raw HTML omitted while rendering "/Users/carlel/freelancer-tax-blog/project_11k/site/blog/content/search/index.md"; see https://gohugo.io/getting-started/configuration-markup/#rendererunsafe
+You can suppress this warning by adding the following to your site configuration:
+ignoreLogs = ['warning-goldmark-raw-html']
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 17 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 17 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 20 ms
+OK: image present on getting-started
+===== QA DONE 20250831_235229 =====
