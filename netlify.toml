@@ -1,57 +1,9 @@
 [build]
-  base = "project_11k/site/blog"
-  publish = "public"
-  command = "hugo --gc --minify"
-
-[build.environment]
-  HUGO_VERSION = "0.148.2"
-
-[context.production.environment]
-  HUGO_ENV = "production"
-  CONTEXT = "production"
-
-[context.deploy-preview.environment]
-  HUGO_ENV = "preview"
-  CONTEXT = "deploy-preview"
-
-[context.branch-deploy.environment]
-  HUGO_ENV = "staging"
-  CONTEXT = "branch-deploy"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; img-src 'self' data: https://plausible.io; style-src 'self' 'unsafe-inline'; connect-src 'self' https://plausible.io; frame-ancestors 'none'"
-
-# Cache aggressively for assets
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+command = "hugo --gc --minify -s project_11k/site/blog -d project_11k/site/blog/public"
+publish = "project_11k/site/blog/public"
 
 [functions]
-directory = "netlify/functions"
-
-[[redirects]]
-from = "/contact/"
-to = "/.netlify/functions/contact"
-status = 200
-force = true
-methods = ["POST"]
+directory = "project_11k/site/blog/netlify/functions"
 
 [[redirects]]
 from = "/blog/"
