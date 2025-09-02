@@ -1,16 +1,15 @@
 Start building sites … 
 hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
 
-WARN  found no layout file for "json" for kind "home": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
 
                   │ EN 
 ──────────────────┼────
- Pages            │ 68 
+ Pages            │ 69 
  Paginator pages  │  0 
  Non-page files   │  0 
- Static files     │  9 
+ Static files     │ 11 
  Processed images │  0 
  Aliases          │  2 
  Cleaned          │  0 
 
-Total in 28 ms
+Total in 56 ms

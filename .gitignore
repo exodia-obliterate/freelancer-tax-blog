@@ -84,3 +84,8 @@ public/
 *.bak
 terminal.log
 .quarantine_*/
+
+# local noise
+homepage.html
+project_11k/site/blog/terminal.log
+*.bak

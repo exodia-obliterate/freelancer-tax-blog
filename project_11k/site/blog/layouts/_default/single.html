@@ -1,8 +1,25 @@
 {{ define "main" }}
-  <article>
-    <h1>{{ .Title }}</h1>
-    <div>
+<main class="content">
+  <article class="post">
+    <header>
+      <h1>{{ .Title }}</h1>
+      <p class="meta">{{ .Date.Format "02 Jan 2006" }} • {{ .ReadingTime }} min read</p>
+      {{ with .Params.categories }}
+      <p class="cats">Categories: {{ delimit . ", " }}</p>
+      {{ end }}
+      {{ with .Params.tags }}
+      <p class="tags">Tags: {{ delimit . ", " }}</p>
+      {{ end }}
+    </header>
+    {{ if .TableOfContents }}
+    <nav class="toc">
+      <h2>Contents</h2>
+      {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+    <section class="post-body">
       {{ .Content }}
-    </div>
+    </section>
   </article>
+</main>
 {{ end }}
