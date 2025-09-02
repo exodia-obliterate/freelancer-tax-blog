@@ -1,7 +1,7 @@
 ---
 title: "Disclaimer"
-date: 2025-09-02T10:14:01Z
+date: 2025-09-02T08:00:00Z
 draft: false
 url: /disclaimer/
 ---
-Placeholder for Disclaimer. Replace with final text.
+This site is not legal, tax, or financial advice. Always confirm details with official HMRC guidance or a qualified professional.

@@ -1,7 +1,7 @@
 ---
 title: "Terms of Use"
-date: 2025-09-02T10:14:01Z
+date: 2025-09-02T08:00:00Z
 draft: false
 url: /terms/
 ---
-Placeholder for Terms of Use. Replace with final text.
+Use this site at your own risk. Content is provided for general guidance. Do not copy content or assets without permission. Availability is not guaranteed.
