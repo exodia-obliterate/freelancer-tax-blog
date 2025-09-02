@@ -1,3 +1,0 @@
-[permalinks]
-  blog = "/blog/:year/:month/:slug/"
-  guides = "/guides/:slug/"

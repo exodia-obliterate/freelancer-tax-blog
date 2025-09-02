@@ -76,3 +76,11 @@ project_11k/site/blog/.gitmodules
 .backup/
 backups/
 /project_11k/site/blog/resources/_gen/
+
+# project hygiene
+public/
+.netlify/
+.DS_Store
+*.bak
+terminal.log
+.quarantine_*/

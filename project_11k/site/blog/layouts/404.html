@@ -1,7 +1,6 @@
 {{ define "main" }}
-<section>
-  <h1>Page not found</h1>
-  <p>That URL doesn’t exist. Try search or go home.</p>
-  <p><a class="button" href="/search/">Search</a> <a class="button" href="/">Home</a></p>
-</section>
+  <section>
+    <h1>Page Not Found</h1>
+    <p>Try the <a href="{{ "/" | relURL }}">homepage</a> or browse <a href="{{ "/posts/" | relURL }}">posts</a>.</p>
+  </section>
 {{ end }}

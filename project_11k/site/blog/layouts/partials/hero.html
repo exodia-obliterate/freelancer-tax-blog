@@ -1,12 +1,10 @@
-{{ if .IsHome }}
-<section class="hero" data-hero="1">
-  <div class="hero-inner">
-    <h1>{{ or .Site.Params.hero_title .Site.Title }}</h1>
-    <p class="lead">{{ or .Site.Params.hero_subtitle "" }}</p>
-    {{ $url := or .Site.Params.payhip_url "https://payhip.com/b/GHlS3" }}
-    {{ $txt := or .Site.Params.cta_text "Get the UK Freelancer Tax Kit" }}
-    <p><a class="button" href="{{ $url }}" data-cta="1">{{ $txt }}</a></p>
-    <span data-hero-ok="HERO_OK"></span>
+<section class="hero">
+  <div class="hero__inner">
+    <img class="hero__logo" src="/img/logo.webp" alt="KELSHD" onerror="this.style.display='none'">
+    <h1>UK Freelancer Survival Kit: Taxes Edition (2025)</h1>
+    <p>Clarity-first guidance, templates, and checklists to cut stress and save money.</p>
+    {{ with .Site.Params.store_url }}
+      <p><a class="btn btn--accent" href="{{ printf "%s?utm_source=blog&utm_medium=hero&utm_campaign=kit_v1" . }}" target="_blank" rel="noopener">Get the Kit</a></p>
+    {{ end }}
   </div>
 </section>
-{{ end }}

@@ -2,6 +2,7 @@ project_10k/site/blog_backup/
 
 # Local Netlify folder
 .netlify
+<<<<<<< HEAD
 
 .DS_Store
 
@@ -23,3 +24,55 @@ nested_backup_*/
 
 # Ignore macOS system files
 .DS_Store
+=======
+project_11k/site/blog/.netlify/
+project_11k/site/blog/themes/*/netlify.toml
+project_11k/site/blog/.backup/
+>>>>>>> b20e475 (Remove duplicate Netlify configs; keep root-only)
+# macOS junk
+.DS_Store
+
+public/
+public_test/
+resources/_gen/
+.hugo_build.lock
+
+project_11k/site/blog/backups/
+project_11k/site/blog/config*.bak
+project_11k/site/blog/hugo*.bak
+_backup/
+
+project_11k/site/blog/.netlify/
+
+*.xlsx
+*.pdf
+*.docx
+# Ignore Hugo scratch/build/test
+public_test/
+resources/_gen/
+.hugo_build.lock
+
+# Ignore local backups and scripts
+project_11k/site/blog/backups/
+project_11k/site/blog/config*.bak
+project_11k/site/blog/hugo*.bak
+project_11k/site/blog/automation/
+project_11k/site/blog/fix*.sh
+project_11k/site/blog/check_*.sh
+
+# Ignore Netlify CLI state
+project_11k/site/blog/.netlify/
+
+# Ignore submodule metadata
+project_11k/site/blog/.gitmodules
+
+# Office/PDF files
+*.xlsx
+*.pdf
+*.docx
+# Ignore all backup files
+*.bak
+*.bak.*
+.backup/
+backups/
+/project_11k/site/blog/resources/_gen/

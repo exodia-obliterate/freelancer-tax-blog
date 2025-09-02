@@ -1,68 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ if ne (hugo.Environment) "production" }}<meta name="robots" content="noindex,nofollow">{{ end }}
-  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-  <meta name="build" content="{{ now.Format "2006-01-02T15:04:05Z07:00" }}">
-  <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
-  <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    {{ partial "social-meta.html" . }}
-  {{ partial "social-meta.html" . }}
-  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  {{ if templates.Exists "partials/jsonld-site.html" }}{{ partial "jsonld-site.html" . }}{{ end }}
-  {{ partial "social-meta.html" . }}
-  {{ with .Params.images }}{{ $img := index . 0 }}<meta property="og:image" content="{{ $img }}">{{ else }}{{ with .Site.Params.og_image }}<meta property="og:image" content="{{ . }}">{{ end }}{{ end }}
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
-{{ $opts := dict "targetPath" "/css/app.css" }}
-{{ $sass := resources.Get "scss/app.scss" | toCSS $opts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $sass.RelPermalink }}" integrity="{{ $sass.Data.Integrity }}">
-  <link rel="stylesheet" href="/css/main.css">
-  {{ with .Site.Params.plausible_domain }}<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>{{ end }}
-  {{ partial "analytics.html" . }}
-  {{ if templates.Exists "partials/jsonld-org.html" }}{{ partial "jsonld-org.html" . }}{{ end }}
-  {{ if templates.Exists "partials/jsonld-breadcrumbs.html" }}{{ partial "jsonld-breadcrumbs.html" . }}{{ end }}
-  {{ if .Params.faq }}{{ partial "jsonld-faq.html" . }}{{ end }}
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;">
-        <div class="brand">{{ .Site.Title }}</div>
+  <head>
+    <meta charset="UTF-8">
+    {{ $isHome := .IsHome }}
+    {{ $title := cond $isHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+    {{ $desc := or .Params.description .Site.Params.description }}
+    <title>{{ $title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
+    <link rel="icon" href="/img/logo.webp" type="image/webp">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="{{ $title }}">
+    {{ if $desc }}<meta property="og:description" content="{{ $desc }}">{{ end }}
+    <meta property="og:type" content="{{ if $isHome }}website{{ else }}article{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ "/img/hero_bg.webp" | relURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    {{ if $desc }}<meta name="twitter:description" content="{{ $desc }}">{{ end }}
+    <meta name="twitter:image" content="{{ "/img/hero_bg.webp" | relURL }}">
+    {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <img src="/img/logo.webp" alt="KELSHD" class="brand-logo" onerror="this.style.display='none'">
+          <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+        </h1>
         <nav>
-          <ul>
-            {{ $m := .Site.Menus.main }}
-            {{ if $m }}
-              {{ range $m }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-              {{ end }}
-            {{ end }}
-          </ul>
-        <form method="get" action="/search/" style="margin:0 0 0 12px">
-          <input type="search" name="q" placeholder="Search..." style="padding:.35rem .6rem;border-radius:6px;border:1px solid #333">
-        </form>
-      </div>
-    </header>
-    {{ partial "breadcrumbs.html" . }}
-    <main>
-      {{ block "main" . }}{{ end }}
-  {{ if in .RelPermalink "/guides/getting-started/" }}{{ partial "coverpicture.html" . }}{{ end }}
-      {{ partial "cta.html" . }}
-    </main>
-    <footer>
-      <div class="container">
-        <p>© {{ now.Year }} {{ .Site.Title }} • layout:vFINAL • build:{{ now.Format "2006-01-02T15:04:05Z07:00" }}</p>
-      </div>
-          {{ partial "footer-social.html" . }}
-    </footer>
-  </div>
-  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
-  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
-</body>
+          <a href="{{ "/" | relURL }}">Home</a>
+          <a href="{{ "/posts/" | relURL }}">Posts</a>
+          {{ with .Site.Params.store_url }}<a href="{{ . }}" target="_blank" rel="noopener">Store</a>{{ end }}
+        </nav>
+      </header>
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+      <footer>
+        <p>© {{ now.Year }} {{ .Site.Title }} • layout:v5</p>
+      </footer>
+    </div>
+  </body>
 </html>
