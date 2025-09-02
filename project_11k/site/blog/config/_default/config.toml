@@ -1,0 +1,39 @@
+baseURL = "https://blog.kelshd.com"
+title = "Kelshd Blog"
+languageCode = "en-gb"
+ignoreLogs = ["warning-goldmark-raw-html"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[permalinks]
+posts = "/:slug/"
+
+[menu]
+  [[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  name = "Blog"
+  url = "/posts/"
+  weight = 2
+
+  [[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 3
+
+  [[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 4
+
+  [[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 5
+
+[outputs]
+home = ["HTML","RSS","JSON"]

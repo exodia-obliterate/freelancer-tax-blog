@@ -1,5 +1,6 @@
 ---
 title: "Hello World"
+url: /hello-world/
 publishDate: 2025-09-02T04:11:13Z
 date: 2025-09-02T04:11:13Z
 draft: false

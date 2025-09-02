@@ -1,25 +1,32 @@
 {{ define "main" }}
-  {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
-  <section>
-    <h1>{{ if .IsHome }}Latest posts{{ else }}{{ .Title }}{{ end }}</h1>
-    <ul class="postlist">
-      {{ if .IsHome }}
-        {{ range site.RegularPages }}
-          {{ if eq .Section "posts" }}
-            <li>
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">— {{ .Format "02 Jan 2006" }}</time>{{ end }}
-            </li>
-          {{ end }}
-        {{ end }}
-      {{ else }}
-        {{ range .Pages.ByDate.Reverse }}
-          <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">— {{ .Format "02 Jan 2006" }}</time>{{ end }}
-          </li>
-        {{ end }}
-      {{ end }}
-    </ul>
+<main class="content">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <section class="post-list">
+    {{ $p := .Paginate (.Pages.ByDate.Reverse) }}
+    {{ range $p.Pages }}
+      <article class="post-item">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="meta">{{ .Date.Format "02 Jan 2006" }}</p>
+        <div class="summary">
+          {{ with .Summary }}{{ . | safeHTML }}{{ partial "netlify_register.html" . }}
+{{ end }}
+        </div>
+        <p><a href="{{ .RelPermalink }}">Read more →</a></p>
+      </article>
+      <hr/>
+    {{ partial "netlify_register.html" . }}
+{{ end }}
+    <nav class="pagination">
+      {{ if $p.HasPrev }}<a href="{{ $p.Prev.URL }}">Newer</a>{{ partial "netlify_register.html" . }}
+{{ end }}
+      {{ if and $p.HasPrev $p.HasNext }} | {{ partial "netlify_register.html" . }}
+{{ end }}
+      {{ if $p.HasNext }}<a href="{{ $p.Next.URL }}">Older</a>{{ partial "netlify_register.html" . }}
+{{ end }}
+    </nav>
   </section>
+</main>
+{{ partial "netlify_register.html" . }}
 {{ end }}

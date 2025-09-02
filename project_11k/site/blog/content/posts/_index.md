@@ -1,3 +1,4 @@
 ---
-title: "Posts"
+title: "Blog"
+description: "Latest articles"
 ---

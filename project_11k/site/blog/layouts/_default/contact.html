@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main class="content">
+  {{ partial "netlify_register_contact.html" . }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    <div>
+      <form name="contact" method="POST" data-netlify="true" action="/thank-you/">
+        <input type="hidden" name="form-name" value="contact">
+        <p><label>Your Name<br><input type="text" name="name" required></label></p>
+        <p><label>Your Email<br><input type="email" name="email" required></label></p>
+        <p><label>Message<br><textarea name="message" required></textarea></label></p>
+        <p><button type="submit">Send</button></p>
+      </form>
+    </div>
+  </article>
+</main>
+{{ end }}
