@@ -52,3 +52,8 @@ to = "/.netlify/functions/contact"
 status = 200
 force = true
 methods = ["POST"]
+
+[[redirects]]
+from = "/blog/"
+to = "/posts/"
+status = 301
