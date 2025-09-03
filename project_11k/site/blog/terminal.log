@@ -2,14 +2,14 @@ Start building sites …
 hugo v0.148.2+extended+withdeploy darwin/arm64 BuildDate=2025-07-27T12:43:24Z VendorInfo=brew
 
 
-                  │ EN 
-──────────────────┼────
- Pages            │ 69 
- Paginator pages  │  0 
- Non-page files   │  0 
- Static files     │ 11 
- Processed images │  0 
- Aliases          │  2 
- Cleaned          │  0 
+                  │ EN  
+──────────────────┼─────
+ Pages            │ 124 
+ Paginator pages  │   2 
+ Non-page files   │   0 
+ Static files     │  11 
+ Processed images │   0 
+ Aliases          │   2 
+ Cleaned          │   0 
 
-Total in 56 ms
+Total in 33 ms
