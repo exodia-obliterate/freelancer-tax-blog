@@ -1,0 +1,9 @@
+/* TEAM */
+Developer: Kelshd
+Site: https://blog.kelshd.com
+
+/* THANKS */
+Built with Hugo, deployed on Netlify
+
+/* SITE */
+Last update: 2025-09-03
