@@ -2,7 +2,12 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
-categories: []
+slug: "{{ .Name }}"
 tags: []
-url: ""
+categories: []
 ---
+## TL;DR
+
+## Key Sections
+
+## Checklist
