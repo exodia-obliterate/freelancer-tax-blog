@@ -14,3 +14,8 @@
 
 /index.xml
   Cache-Control: public, max-age=3600
+
+/googleACTUALTOKEN.html
+  Cache-Control: no-store
+/BingSiteAuth.xml
+  Cache-Control: no-store
