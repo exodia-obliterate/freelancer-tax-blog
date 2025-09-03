@@ -1,0 +1,10 @@
+<section class="featured-posts">
+  <h2>Featured Posts</h2>
+  <ul>
+    {{ range first 3 (where .Site.RegularPages "Params.categories" "intersect" (slice "secondary")) }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</section>

@@ -1,17 +1,8 @@
 {{ define "main" }}
-{{ partial "hero.html" . }}
-<main class="content">
-  <section>
-    <h1>Kelshd: UK Freelancer Tax Guides</h1>
-    <p>Practical, no-fluff answers to tax and money questions for UK freelancers. Short reads, clear steps, and links to HMRC sources where it matters.</p>
-  </section>
-  <section>
-    <h2>Latest Posts</h2>
-    <ul>
-      {{ range first 10 (where .Site.RegularPages "Type" "posts" ) }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "02 Jan 2006" }}</li>
-      {{ end }}
-    </ul>
-  </section>
-</main>
+  <main>
+    <div class="intro">
+      {{ .Content }}
+    </div>
+    {{ partial "featured.html" . }}
+  </main>
 {{ end }}
