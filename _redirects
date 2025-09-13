@@ -1,0 +1,4 @@
+# feed-aliases-begin
+/rss.xml      /index.xml   301
+/feed         /index.xml   301
+# feed-aliases-end
