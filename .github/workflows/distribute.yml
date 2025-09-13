@@ -52,3 +52,24 @@ jobs:
             -d "$(jq -n --arg a "$actor" --arg t "${{ steps.extract.outputs.msg }}" \
               '{author:$a,lifecycleState:"PUBLISHED",specificContent:{com.linkedin.ugc.ShareContent:{shareCommentary:{text:$t},shareMediaCategory:"NONE"}},visibility:{com.linkedin.ugc.MemberNetworkVisibility:"PUBLIC"}}')" \
           | jq -r '.id' || true
+      - name: Post to X (Twitter via OAuth 1.0a)
+        if: steps.extract.outputs.msg != ''
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          import tweepy
+          msg = os.environ.get('GITHUB_OUTPUT_MSG') or "${{ steps.extract.outputs.msg }}"
+          api_key = os.environ["TWITTER_API_KEY"]
+          api_secret = os.environ["TWITTER_API_SECRET"]
+          access_token = os.environ["TWITTER_ACCESS_TOKEN"]
+          access_secret = os.environ["TWITTER_ACCESS_SECRET"]
+          auth = tweepy.OAuth1UserHandler(api_key, api_secret, access_token, access_secret)
+          api = tweepy.API(auth)
+          api.update_status(status=msg)
+          print("Tweeted:", msg)
+          PY
