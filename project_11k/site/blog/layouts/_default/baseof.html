@@ -22,6 +22,11 @@
     <p>&copy; {{ now.Year }} {{ .Site.Title }} — All rights reserved.</p>
   </footer>
 <p style="text-align:center;margin:2rem 0"><a href="/newsletter/">Subscribe</a></p>
+<form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<input type="email" name="email">
+<input type="hidden" name="form-name" value="newsletter">
+<p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+</form>
 </body>
 </html>
   {{ partial "structured.html" . }}
