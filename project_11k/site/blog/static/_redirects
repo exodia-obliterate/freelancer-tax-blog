@@ -1,3 +1,2 @@
-/googleACTUALTOKEN.html  /googleACTUALTOKEN.html 200
-/  /index.html  200
-/posts/*  /:splat 301
+/rss.xml      /index.xml   301
+/feed         /index.xml   301
