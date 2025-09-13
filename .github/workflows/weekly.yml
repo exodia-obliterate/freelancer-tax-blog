@@ -1,0 +1,17 @@
+name: weekly
+on:
+  schedule:
+    - cron: '0 9 * * MON'
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.148.2'
+          extended: true
+      - run: cd project_11k/site/blog && zsh automation/weekly && zsh automation/publish
