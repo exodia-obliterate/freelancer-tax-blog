@@ -9,3 +9,33 @@ directory = "project_11k/site/blog/netlify/functions"
 from = "/blog/"
 to = "/posts/"
 status = 301
+# perf-headers-begin
+[[headers]]
+  for = "/*"
+  [headers.values]
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "SAMEORIGIN"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/**/*.html"
+  [headers.values]
+  Cache-Control = "public, max-age=60, s-maxage=600"
+
+[[headers]]
+  for = "/**/*.css"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/**/*.js"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/**/*.{svg,png,jpg,jpeg,webp,woff,woff2}"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+# perf-headers-end
