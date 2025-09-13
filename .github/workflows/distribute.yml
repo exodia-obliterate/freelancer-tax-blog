@@ -1,0 +1,54 @@
+name: distribute-on-new-post
+on:
+  push:
+    paths:
+      - "project_11k/site/blog/content/posts/**.md"
+  workflow_dispatch:
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: find
+        run: |
+          f=$(git diff --name-only HEAD~1..HEAD | grep '^project_11k/site/blog/content/posts/.*\.md$' | head -n1 || true)
+          echo "file=$f" >> $GITHUB_OUTPUT
+      - id: extract
+        if: steps.find.outputs.file != ''
+        run: |
+          f="${{ steps.find.outputs.file }}"
+          title=$(grep -m1 '^title:' "$f" | sed 's/^title:[[:space:]]*["'\'']\?//; s/["'\'']$//')
+          date=$(grep -m1 '^date:' "$f" | awk '{print $2}')
+          slug=$(basename "$f" .md)
+          url="https://blog.kelshd.com/${slug}/"
+          msg="${title:-New post}: ${url}"
+          echo "msg=$msg" >> $GITHUB_OUTPUT
+          echo "url=$url" >> $GITHUB_OUTPUT
+      - name: Post to X (Twitter)
+        if: steps.extract.outputs.msg != '' && env.X_BEARER != ''
+        env:
+          X_BEARER: ${{ secrets.X_BEARER }}
+          X_ACCOUNT_ID: ${{ secrets.X_ACCOUNT_ID }}
+        run: |
+          set -e
+          echo "${{ steps.extract.outputs.msg }}"
+          curl -s -X POST "https://api.twitter.com/2/tweets" \
+            -H "Authorization: Bearer $X_BEARER" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\":\"${{ steps.extract.outputs.msg }}\"}" \
+          | jq -r '.data.id' || true
+      - name: Post to LinkedIn
+        if: steps.extract.outputs.msg != '' && env.LINKEDIN_TOKEN != ''
+        env:
+          LINKEDIN_TOKEN: ${{ secrets.LINKEDIN_TOKEN }}
+          LINKEDIN_ORG: ${{ secrets.LINKEDIN_ORG }}
+        run: |
+          set -e
+          actor="${LINKEDIN_ORG:-urn:li:person:me}"
+          curl -s -X POST "https://api.linkedin.com/v2/ugcPosts" \
+            -H "Authorization: Bearer $LINKEDIN_TOKEN" \
+            -H "X-Restli-Protocol-Version: 2.0.0" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg a "$actor" --arg t "${{ steps.extract.outputs.msg }}" \
+              '{author:$a,lifecycleState:"PUBLISHED",specificContent:{com.linkedin.ugc.ShareContent:{shareCommentary:{text:$t},shareMediaCategory:"NONE"}},visibility:{com.linkedin.ugc.MemberNetworkVisibility:"PUBLIC"}}')" \
+          | jq -r '.id' || true
